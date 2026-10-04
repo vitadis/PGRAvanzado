@@ -17,4 +17,17 @@ public class Persona {
     public int getEdad() {
         return edad;
     }
+
+    @Override
+    public String toString() {
+        return "Persona{" +
+                "nombre='" + nombre + '\'' +
+                ", edad=" + edad +
+                '}';
+    }
+
+    public void mensaje(){
+        System.out.println("Hola "+ getNombre() + " tienes "+ getEdad() + " años :)");
+
+    }
 }
