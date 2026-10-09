@@ -41,6 +41,7 @@ public class TrabajadorData {
             System.out.println(cabecera());
         this.trabajadores.forEach(consumidor);
     }
+
 /*
     public static void main(String[] args){
         TrabajadorData tl = new TrabajadorData();

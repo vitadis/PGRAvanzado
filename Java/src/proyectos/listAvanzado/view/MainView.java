@@ -8,6 +8,7 @@ public class MainView {
     public static void mainMenu() {
         TrabajadorData td = new TrabajadorData();
         MostrarView mv = new MostrarView(td);
+        BuscarView bv = new BuscarView(td);
 
         String menu = """
                 ========================================
@@ -35,9 +36,8 @@ public class MainView {
                     System.out.println("Adios, cerrando el programa...");
                     System.exit(0);
                 }
-                case 1 -> {
-                    mv.mostrarTrabajadores();
-                }
+                case 1 -> mv.mostrarTrabajadores();
+                case 2 -> bv.buscarTrabajadores();
                 default -> System.out.println("Agrega una opcion valida");
             }
         }
