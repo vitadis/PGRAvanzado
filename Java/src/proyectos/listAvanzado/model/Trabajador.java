@@ -3,20 +3,22 @@ package proyectos.listAvanzado.model;
 public class Trabajador {
 
     public enum Departamento{
-        Desarrollo, Diseño, Administracion
+        Desarrollo, Diseno, Administracion
     }
 
 
     private int id;
     private String nombre;
-    private double salario;
+    private int edad;
+    private int salario;
     private Departamento depto;
 
-    public Trabajador(int id, String nombre, double salario, Departamento depto) {
+    public Trabajador(int id, String nombre, int edad,int salario, Departamento depto) {
         this.id = id;
         this.nombre = nombre;
         this.salario = salario;
         this.depto = depto;
+        this.edad = edad;
     }
 
     public int getId() {
@@ -35,11 +37,11 @@ public class Trabajador {
         this.nombre = nombre;
     }
 
-    public double getSalario() {
+    public int getSalario() {
         return salario;
     }
 
-    public void setSalario(double salario) {
+    public void setSalario(int salario) {
         this.salario = salario;
     }
 
@@ -51,13 +53,19 @@ public class Trabajador {
         this.depto = depto;
     }
 
+    public int getEdad() {
+        return edad;
+    }
+
+    public void setEdad(int edad) {
+        this.edad = edad;
+    }
+
     @Override
     public String toString() {
-        return "Trabajador{" +
-                "id=" + id +
-                ", nombre='" + nombre + '\'' +
-                ", salario=" + salario +
-                ", depto=" + depto +
-                '}';
+        return String.format(
+                "| %-5s | %-15s | %-5s | %-10s | %-15s |%n",
+                id, nombre, edad, salario, depto
+        );
     }
 }

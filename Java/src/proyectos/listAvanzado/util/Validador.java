@@ -21,16 +21,19 @@ public class Validador {
         return salida;
     }
 
-    public static int leerInt(String mensaje){
+    public static int leerInt(String mensaje) {
         String numero;
-        Pattern patron = Pattern.compile("^\\d$");
-        Matcher matcher;
+        Pattern patron = Pattern.compile("\\d+");
 
         do {
             numero = leerString(mensaje, false);
-            matcher = patron.matcher(numero);
-            if(!matcher.find())System.out.println("Solo enteros");
-        }while(!matcher.find());
+
+            if (!patron.matcher(numero).matches()) {
+                System.out.println("Solo enteros");
+            }
+
+        } while (!patron.matcher(numero).matches());
+
         return Integer.parseInt(numero);
     }
 
